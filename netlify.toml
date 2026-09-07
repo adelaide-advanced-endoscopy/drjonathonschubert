@@ -1,5 +1,13 @@
 Ini, TOML
-[[headers]]
-  for = "/private/*"
-  [headers.values]
-    Basic-Auth = "pokemon:pokemon"
+# 1. Allow logged-in users with the 'admin' role to view /private/
+[[redirects]]
+  from = "/private/*"
+  status = 200
+  conditions = {Role = ["admin"]}
+
+# 2. Kick everyone else attempting to access /private/ back to the public homepage
+[[redirects]]
+  from = "/private/*"
+  to = "/"
+  status = 302
+  force = true

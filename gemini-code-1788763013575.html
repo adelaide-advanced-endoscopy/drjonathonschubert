@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Dashboard &amp; Journal</title>
+  <!-- Search engine exclusion -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    :root {
+      --navy: #17344d;
+      --navy-deep: #10283b;
+      --blue: #426f82;
+      --blue-light: #edf4f6;
+      --bg: #f6f8f8;
+      --card-bg: #ffffff;
+      --text: #293842;
+      --muted: #687781;
+      --border: #dce3e7;
+      --radius: 6px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 24px 0;
+      margin-bottom: 32px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 { margin: 0; font-size: 1.5rem; font-weight: 600; }
+    .subtitle { color: #a9c0c9; font-size: 0.85rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    /* Sidebar / Bookmarks */
+    .section-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .link-group {
+      margin-bottom: 24px;
+    }
+
+    .link-group h3 {
+      font-size: 0.95rem;
+      margin: 0 0 8px 0;
+      color: var(--navy);
+    }
+
+    .bookmark-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bookmark-list li { margin-bottom: 6px; }
+
+    .bookmark-list a {
+      display: block;
+      padding: 10px 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .bookmark-list a:hover {
+      border-color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    /* Journal Main Area */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .journal-form input, 
+    .journal-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    .journal-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .btn {
+      background: var(--navy);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn:hover { background: var(--navy-deep); }
+
+    .entry {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    .entry:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .entry-title {
+      font-size: 1.15rem;
+      margin: 0;
+      color: var(--navy);
+    }
+
+    .entry-date {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .entry-body {
+      font-size: 0.95rem;
+      white-space: pre-line;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-flex">
+    <div>
+      <h1>Personal Workspace</h1>
+      <div class="subtitle">Private Dashboard &amp; Notes</div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div class="grid">
+    
+    <!-- LEFT COLUMN: Quick Links / Bookmarks -->
+    <aside>
+      <div class="section-title">Quick Links</div>
+
+      <div class="link-group">
+        <h3>Clinical &amp; Hospital</h3>
+        <ul class="bookmark-list">
+          <li><a href="https://example.com" target="_blank">Clinical Portal</a></li>
+          <li><a href="https://example.com" target="_blank">Hospital Intranet</a></li>
+          <li><a href="https://example.com" target="_blank">Procedure Scheduling</a></li>
+        </ul>
+      </div>
+
+      <div class="link-group">
+        <h3>Reference &amp; Journals</h3>
+        <ul class="bookmark-list">
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed</a></li>
+          <li><a href="https://www.gesa.org.au/" target="_blank">GESA Guidelines</a></li>
+        </ul>
+      </div>
+
+      <div class="link-group">
+        <h3>Utilities</h3>
+        <ul class="bookmark-list">
+          <li><a href="https://drive.google.com" target="_blank">Google Drive</a></li>
+          <li><a href="https://mail.google.com" target="_blank">Email Console</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- RIGHT COLUMN: Private Journal / Notes -->
+    <section>
+      <div class="section-title">Private Journal</div>
+
+      <!-- Entry Creator -->
+      <div class="card">
+        <form class="journal-form" id="journalForm">
+          <input type="text" id="titleInput" placeholder="Entry Title..." required>
+          <textarea id="bodyInput" placeholder="Write your thoughts, draft notes, or records here..." required></textarea>
+          <button type="submit" class="btn">Save Entry</button>
+        </form>
+      </div>
+
+      <!-- Journal Stream -->
+      <div class="card">
+        <div id="entriesContainer">
+          <!-- Saved entries render here -->
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<script>
+  // Simple Browser Storage Engine for Journal Entries
+  const STORAGE_KEY = 'private_journal_entries';
+
+  function getEntries() {
+    const data = localStorage.getItem(STORAGE_KEY);
+    return data ? JSON.parse(data) : [];
+  }
+
+  function saveEntry(title, body) {
+    const entries = getEntries();
+    const newEntry = {
+      id: Date.now(),
+      date: new Date().toLocaleDateString('en-AU', { 
+        year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' 
+      }),
+      title: title,
+      body: body
+    };
+    entries.unshift(newEntry);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+    renderEntries();
+  }
+
+  function renderEntries() {
+    const container = document.getElementById('entriesContainer');
+    const entries = getEntries();
+
+    if (entries.length === 0) {
+      container.innerHTML = '<p style="color:var(--muted); margin:0;">No entries written yet.</p>';
+      return;
+    }
+
+    container.innerHTML = entries.map(entry => `
+      <article class="entry">
+        <div class="entry-header">
+          <h2 class="entry-title">${escapeHtml(entry.title)}</h2>
+          <span class="entry-date">${entry.date}</span>
+        </div>
+        <div class="entry-body">${escapeHtml(entry.body)}</div>
+      </article>
+    `).join('');
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  document.getElementById('journalForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = document.getElementById('titleInput').value;
+    const body = document.getElementById('bodyInput').value;
+    
+    saveEntry(title, body);
+    
+    document.getElementById('titleInput').value = '';
+    document.getElementById('bodyInput').value = '';
+  });
+
+  // Initial render on load
+  renderEntries();
+</script>
+
+</body>
+</html>

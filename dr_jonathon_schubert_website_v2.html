@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dr Jonathon Schubert | Advanced & Interventional Gastroenterology Adelaide</title>
+  <meta name="description" content="Dr Jonathon Schubert is an Adelaide gastroenterologist and interventional endoscopist specialising in advanced endoscopy, ESD, EMR, EUS, Barrett's oesophagus, complex polyps and small bowel investigation.">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    :root {
+      --navy: #17344d;
+      --navy-deep: #10283b;
+      --blue: #426f82;
+      --blue-light: #edf4f6;
+      --sage: #7d918b;
+      --text: #293842;
+      --muted: #687781;
+      --light: #f6f8f8;
+      --warm: #fbfaf7;
+      --border: #dce3e7;
+      --white: #fff;
+      --max-width: 1120px;
+      --shadow: 0 14px 40px rgba(23,52,77,.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--white);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: 92%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    header {
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: .88rem;
+      color: #4e5d66;
+    }
+
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid var(--navy);
+      color: var(--navy) !important;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(246,248,248,.98) 0%, rgba(246,248,248,.94) 58%, rgba(246,248,248,.68) 100%);
+      padding: 92px 0 88px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.16fr .84fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: clamp(2.65rem, 5vw, 4.35rem);
+      line-height: 1.04;
+      font-weight: 600;
+      letter-spacing: -.025em;
+    }
+
+    .hero h2 {
+      margin: 0 0 22px;
+      color: #50616c;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 1.12rem;
+      color: #52616b;
+      margin: 0 0 30px;
+    }
+
+    .hero-tagline {
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: -12px 0 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 21px;
+      border-radius: 3px;
+      border: 1px solid var(--navy);
+      background: var(--navy);
+      color: white;
+      font-weight: 700;
+      font-size: .92rem;
+      transition: .2s ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .button.secondary {
+      background: white;
+      color: var(--navy);
+    }
+
+    .photo-placeholder {
+      min-height: 500px;
+      background: #e2e9ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #78868e;
+      padding: 30px;
+      border-radius: 2px;
+      box-shadow: var(--shadow);
+    }
+
+    section { padding: 88px 0; }
+    section.alt { background: var(--light); }
+    section.warm { background: var(--warm); }
+
+    h2 {
+      margin: 0 0 17px;
+      color: var(--navy);
+      font-size: clamp(1.9rem, 3vw, 2.45rem);
+      line-height: 1.18;
+      font-weight: 600;
+      letter-spacing: -.015em;
+    }
+
+    h3 {
+      color: var(--navy);
+      line-height: 1.3;
+    }
+
+    .intro {
+      max-width: 780px;
+      color: var(--muted);
+      margin: 0 0 42px;
+      font-size: 1.04rem;
+    }
+
+    .lead {
+      font-size: 1.14rem;
+      color: #4f6069;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-image {
+      min-height: 500px;
+      background: #e3e9ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #78868e;
+      padding: 30px;
+    }
+
+    .credential-strip {
+      margin-top: 34px;
+      padding: 22px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .credential strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.05rem;
+      margin-bottom: 3px;
+    }
+
+    .credential span {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 28px;
+      min-height: 155px;
+    }
+
+    .card h3 {
+      margin: 0 0 9px;
+      font-size: 1.06rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .93rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      padding: 32px;
+      border: 1px solid var(--border);
+      background: white;
+    }
+
+    .feature h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .feature .icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step {
+      padding: 30px 25px 30px 0;
+      margin-right: 25px;
+      border-right: 1px solid var(--border);
+    }
+
+    .step:last-child {
+      border-right: 0;
+      margin-right: 0;
+    }
+
+    .step-number {
+      color: var(--blue);
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: .08em;
+      margin-bottom: 9px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .referral-layout {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .referral-box {
+      background: var(--light);
+      border-left: 4px solid var(--blue);
+      padding: 32px 36px;
+    }
+
+    .referral-box h3 {
+      margin-top: 0;
+    }
+
+    .referral-list {
+      margin: 22px 0;
+      padding-left: 20px;
+    }
+
+    .referral-list li { margin-bottom: 7px; }
+
+    .resource-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .resource-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .resource-link span {
+      color: var(--blue);
+      font-weight: 400;
+      font-size: .86rem;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .location-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 28px;
+    }
+
+    .location-card h3 {
+      margin: 0 0 9px;
+      font-size: 1.08rem;
+    }
+
+    .location-card .location-type {
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--blue);
+      font-size: .7rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .location-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: .91rem;
+    }
+
+    .faq {
+      max-width: 850px;
+    }
+
+    details {
+      border-top: 1px solid var(--border);
+      padding: 19px 0;
+    }
+
+    details:last-child { border-bottom: 1px solid var(--border); }
+
+    summary {
+      cursor: pointer;
+      color: var(--navy);
+      font-weight: 700;
+      list-style: none;
+      padding-right: 30px;
+      position: relative;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary:after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      font-size: 1.2rem;
+      color: var(--blue);
+    }
+
+    details[open] summary:after { content: "−"; }
+
+    details p {
+      color: var(--muted);
+      margin: 12px 0 0;
+      max-width: 780px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .contact-item { margin-bottom: 25px; }
+
+    .contact-item strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .closing {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 75px 0;
+    }
+
+    .closing h2 { color: white; }
+
+    .closing p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: #dbe4e8;
+    }
+
+    footer {
+      background: var(--navy-deep);
+      color: #d9e1e6;
+      padding: 42px 0;
+      font-size: .82rem;
+    }
+
+    footer p { margin: 5px 0; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 50px;
+    }
+
+    .small-note {
+      color: #8ea0aa;
+      font-size: .75rem;
+      max-width: 760px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero-grid, .about, .referral-layout, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .cards, .locations-grid { grid-template-columns: 1fr 1fr; }
+      .process { grid-template-columns: 1fr 1fr; }
+      .step:nth-child(2) { border-right: 0; }
+      .step:nth-child(3), .step:nth-child(4) { border-top: 1px solid var(--border); }
+    }
+
+    @media (max-width: 620px) {
+      .hero { padding: 62px 0; }
+      section { padding: 62px 0; }
+      .cards, .locations-grid, .feature-grid, .credential-strip, .process {
+        grid-template-columns: 1fr;
+      }
+      .step {
+        border-right: 0 !important;
+        border-top: 1px solid var(--border);
+        margin: 0;
+        padding: 24px 0;
+      }
+      .step:first-child { border-top: 0; }
+      .photo-placeholder, .about-image { min-height: 330px; }
+      .hero p { font-size: 1rem; }
+      h1 { font-size: 2.75rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">Dr Jonathon Schubert</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#patient-care">Patient care</a>
+      <a href="#resources">Resources</a>
+      <a href="#locations">Locations</a>
+      <a href="#referrals" class="nav-cta">Refer a Patient</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Gastroenterologist &amp; Interventional Endoscopist</div>
+        <h1>Dr Jonathon Schubert</h1>
+        <h2>BSc, BEng(Hons I), MD(Dist), PhD, FRACP</h2>
+        <div class="hero-tagline">Advanced endoscopy with a focus on precision, safety and patient-centred care.</div>
+        <p>
+          Specialist gastroenterology and advanced endoscopic care in Adelaide and regional South Australia,
+          with particular expertise in complex gastrointestinal lesions, ESD, EMR, EUS and small bowel investigation.
+        </p>
+        <div class="buttons">
+          <a class="button" href="#referrals">Refer a Patient</a>
+          <a class="button secondary" href="#patient-care">For Patients</a>
+        </div>
+      </div>
+
+      <div class="photo-placeholder">
+        PROFESSIONAL PHOTOGRAPH
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section class="warm">
+    <div class="container">
+      <div class="eyebrow">Specialist care</div>
+      <h2>When advanced endoscopy matters</h2>
+      <p class="intro">
+        Some gastrointestinal conditions require more than routine endoscopy. Dr Schubert provides
+        specialist assessment and advanced endoscopic treatment for appropriately selected patients,
+        working closely with referring doctors and multidisciplinary teams when required.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="icon">01</div>
+          <h3>Advanced technical expertise</h3>
+          <p>
+            Specialist training and experience in advanced endoscopic techniques including
+            endoscopic submucosal dissection (ESD), EMR, EUS and complex small bowel investigation.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">02</div>
+          <h3>Care centred around the patient</h3>
+          <p>
+            Clear explanations, thoughtful decision-making and careful follow-up are central to the
+            approach, with treatment recommendations tailored to the individual patient.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">03</div>
+          <h3>Tertiary-level expertise</h3>
+          <p>
+            Complex cases can be assessed in the context of multidisciplinary gastroenterology,
+            surgery, pathology and oncology when this is appropriate.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">04</div>
+          <h3>Communication with your doctors</h3>
+          <p>
+            Referring GPs, gastroenterologists and other specialists are kept informed, with an
+            emphasis on timely reports and clear recommendations for ongoing care.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container about">
+      <div class="about-image">PROFESSIONAL PHOTOGRAPH</div>
+
+      <div>
+        <div class="eyebrow">About Dr Schubert</div>
+        <h2>Expertise built around advanced endoscopy</h2>
+
+        <p class="lead">
+          Dr Jonathon Schubert is a Consultant Gastroenterologist and Interventional Endoscopist
+          with a particular focus on advanced diagnostic and therapeutic endoscopy.
+        </p>
+
+        <p>
+          Following specialist training in South Australia, Dr Schubert completed an Interventional
+          Endoscopy Fellowship at the Royal Brisbane and Women's Hospital, followed by advanced ESD
+          training in leading centres in Japan and Germany.
+        </p>
+
+        <p>
+          He leads the advanced endoscopy service at Southern Adelaide Local Health Network (SALHN)
+          and established the SALHN Endoscopic Submucosal Dissection program following his return to
+          Adelaide in 2024. His practice includes the assessment and endoscopic treatment of complex
+          mucosal lesions and selected early gastrointestinal cancers.
+        </p>
+
+        <p>
+          Dr Schubert has a background in Engineering (First Class Honours) and a PhD from the
+          University of Adelaide focused on <em>Helicobacter pylori</em> and gastric cancer risk.
+          He brings an analytical, evidence-based approach to clinical decision-making while placing
+          considerable emphasis on communication, safety and the experience of each patient.
+        </p>
+
+        <p>
+          He works collaboratively with General Practitioners, gastroenterologists, gastrointestinal
+          surgeons and other specialists to provide appropriate investigation, treatment and follow-up.
+        </p>
+
+        <div class="credential-strip">
+          <div class="credential">
+            <strong>FRACP</strong>
+            <span>Specialist physician training</span>
+          </div>
+          <div class="credential">
+            <strong>Advanced Endoscopy</strong>
+            <span>ESD, EMR, EUS &amp; complex procedures</span>
+          </div>
+          <div class="credential">
+            <strong>Academic &amp; Research</strong>
+            <span>Clinical research and tertiary practice</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="expertise" class="alt">
+    <div class="container">
+      <div class="eyebrow">Areas of expertise</div>
+      <h2>Advanced &amp; interventional gastroenterology</h2>
+      <p class="intro">
+        Referrals are welcomed across general gastroenterology, with particular expertise in
+        advanced endoscopic diagnosis and treatment.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>ESD &amp; EMR</h3>
+          <p>Advanced endoscopic resection of selected large, complex or superficially invasive gastrointestinal lesions.</p>
+        </div>
+
+        <div class="card">
+          <h3>Complex colorectal polyps</h3>
+          <p>Assessment and management of large or difficult-to-remove colorectal lesions and polyps.</p>
+        </div>
+
+        <div class="card">
+          <h3>Barrett's oesophagus</h3>
+          <p>Assessment, surveillance and endoscopic treatment of Barrett's-related neoplasia, including selected resection and ablation strategies.</p>
+        </div>
+
+        <div class="card">
+          <h3>EUS</h3>
+          <p>Diagnostic and therapeutic endoscopic ultrasound for selected upper gastrointestinal, pancreatic and biliary conditions.</p>
+        </div>
+
+        <div class="card">
+          <h3>Small bowel investigation</h3>
+          <p>Capsule endoscopy and balloon-assisted enteroscopy for selected small bowel disorders and obscure bleeding.</p>
+        </div>
+
+        <div class="card">
+          <h3>Iron deficiency &amp; GI bleeding</h3>
+          <p>Investigation of unexplained iron deficiency, occult gastrointestinal bleeding and suspected small bowel sources.</p>
+        </div>
+
+        <div class="card">
+          <h3>Positive FIT / bowel cancer screening</h3>
+          <p>Colonoscopy and specialist assessment following a positive faecal immunochemical test or other concerning screening result.</p>
+        </div>
+
+        <div class="card">
+          <h3>General gastroenterology</h3>
+          <p>Assessment of common gastrointestinal symptoms and conditions, including reflux, dysphagia, abdominal pain and altered bowel habit.</p>
+        </div>
+
+        <div class="card">
+          <h3>Complex endoscopic opinions</h3>
+          <p>Second opinions and procedural assessment where an advanced endoscopic approach may be appropriate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCEDURES -->
+  <section>
+    <div class="container">
+      <div class="eyebrow">Procedures</div>
+      <h2>Advanced endoscopic procedures</h2>
+      <p class="intro">
+        Procedures are recommended only where clinically appropriate following assessment and discussion
+        of the potential benefits, risks and alternatives.
+      </p>
+
+      <div class="cards">
+        <div class="card"><h3>Gastroscopy</h3><p>Diagnostic upper gastrointestinal endoscopy, with therapeutic intervention where indicated.</p></div>
+        <div class="card"><h3>Colonoscopy</h3><p>High-quality diagnostic colonoscopy, polypectomy and management of complex colorectal lesions.</p></div>
+        <div class="card"><h3>ESD / EMR</h3><p>Advanced endoscopic resection techniques for selected mucosal neoplasia.</p></div>
+        <div class="card"><h3>EUS</h3><p>Endoscopic ultrasound, including selected tissue sampling and therapeutic applications.</p></div>
+        <div class="card"><h3>Balloon-assisted enteroscopy</h3><p>Deep small bowel endoscopy using antegrade and retrograde approaches when indicated.</p></div>
+        <div class="card"><h3>Capsule endoscopy</h3><p>Non-invasive small bowel assessment for selected indications.</p></div>
+        <div class="card"><h3>RFA &amp; Barrett's therapy</h3><p>Endoscopic therapy for appropriately selected Barrett's-related dysplasia or neoplasia.</p></div>
+        <div class="card"><h3>Dilatation &amp; stenting</h3><p>Selected therapeutic interventions for gastrointestinal strictures and obstruction.</p></div>
+        <div class="card"><h3>Therapeutic interventions</h3><p>Advanced endoscopic haemostasis and other luminal interventions where appropriate.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATIENT CENTRED -->
+  <section id="patient-care" class="warm">
+    <div class="container">
+      <div class="eyebrow">Patient-centred care</div>
+      <h2>Expertise is only part of good care</h2>
+      <p class="intro">
+        Advanced procedures can be complex. The aim is not simply to perform a technically difficult
+        procedure, but to make sure each patient understands why it is being recommended, what to expect
+        and how they will be supported before and after treatment.
+      </p>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="icon">01</div>
+          <h3>Time to understand</h3>
+          <p>Patients should understand their diagnosis, the purpose of a procedure, the expected benefits and the relevant risks before proceeding.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">02</div>
+          <h3>Individualised decisions</h3>
+          <p>Not every lesion or condition requires an advanced procedure. Treatment is selected according to the patient's circumstances, anatomy, pathology and preferences.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">03</div>
+          <h3>Minimally invasive where appropriate</h3>
+          <p>For appropriately selected lesions, advanced endoscopic techniques may offer an organ-preserving alternative to surgery.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">04</div>
+          <h3>Follow-up matters</h3>
+          <p>Care continues after the procedure, with pathology review, surveillance planning and communication with the patient's usual doctors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATIENT JOURNEY -->
+  <section>
+    <div class="container">
+      <div class="eyebrow">Your care journey</div>
+      <h2>What to expect</h2>
+      <p class="intro">
+        Every patient's pathway is different. The following provides a general guide to how assessment
+        and advanced endoscopic treatment may be organised.
+      </p>
+
+      <div class="process">
+        <div class="step">
+          <div class="step-number">01 — REFERRAL</div>
+          <h3>Initial assessment</h3>
+          <p>Your referral and previous investigations are reviewed and an appropriate consultation or procedure is arranged.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02 — DISCUSSION</div>
+          <h3>Understanding the options</h3>
+          <p>The diagnosis, possible treatment options, benefits, risks and alternatives are discussed with you.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03 — PROCEDURE</div>
+          <h3>Specialist treatment</h3>
+          <p>If a procedure is appropriate, it is performed in an accredited hospital or day-hospital environment.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04 — FOLLOW-UP</div>
+          <h3>Results &amp; ongoing care</h3>
+          <p>Results are reviewed, recommendations are communicated and a follow-up plan is arranged where required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section id="resources" class="alt">
+    <div class="container referral-layout">
+      <div>
+        <div class="eyebrow">Patient resources</div>
+        <h2>Information to help you prepare</h2>
+        <p class="intro">
+          Understanding your procedure can make the experience less stressful. Patient information,
+          preparation instructions and trusted educational resources will be added here as they become available.
+        </p>
+
+        <div class="resource-list">
+          <!-- Replace # with the final PDF or trusted resource URL -->
+          <a class="resource-link" href="#" target="_blank" rel="noopener">
+            Gastroscopy — patient information <span>PDF / Fact sheet →</span>
+          </a>
+          <a class="resource-link" href="#" target="_blank" rel="noopener">
+            Colonoscopy — patient information <span>PDF / Fact sheet →</span>
+          </a>
+          <a class="resource-link" href="#" target="_blank" rel="noopener">
+            Colonoscopy preparation <span>Preparation guide →</span>
+          </a>
+          <a class="resource-link" href="#" target="_blank" rel="noopener">
+            ESD — patient information <span>Fact sheet →</span>
+          </a>
+          <a class="resource-link" href="#" target="_blank" rel="noopener">
+            EMR — patient information <span>Fact sheet →</span>
+          </a>
+          <a class="resource-link" href="#" target="_blank" rel="noopener">
+            EUS — patient information <span>Fact sheet →</span>
+          </a>
+          <a class="resource-link" href="#" target="_blank" rel="noopener">
+            Capsule endoscopy <span>Fact sheet →</span>
+          </a>
+          <a class="resource-link" href="#" target="_blank" rel="noopener">
+            Balloon-assisted enteroscopy <span>Fact sheet →</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="eyebrow">Trusted information</div>
+        <h2>Learn more</h2>
+        <p class="intro">
+          Patient information should come from reliable medical sources. Links can be added here to
+          relevant resources from recognised Australian health organisations and hospitals.
+        </p>
+
+        <div class="resource-list">
+          <a class="resource-link" href="https://www.healthdirect.gov.au/" target="_blank" rel="noopener">
+            Healthdirect Australia <span>Visit →</span>
+          </a>
+          <a class="resource-link" href="https://www.gesa.org.au/" target="_blank" rel="noopener">
+            Gastroenterological Society of Australia <span>Visit →</span>
+          </a>
+          <a class="resource-link" href="https://www.cancer.org.au/" target="_blank" rel="noopener">
+            Cancer Council Australia <span>Visit →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR REFERRERS -->
+  <section id="referrals">
+    <div class="container">
+      <div class="eyebrow">For referring doctors</div>
+      <h2>Refer a patient</h2>
+      <p class="intro">
+        Referrals are welcomed from General Practitioners, gastroenterologists, surgeons and other
+        specialists for consultation, advanced endoscopic assessment and procedural management.
+      </p>
+
+      <div class="referral-layout">
+        <div class="referral-box">
+          <h3>When to consider referral</h3>
+          <ul class="referral-list">
+            <li>Large or complex colorectal polyps</li>
+            <li>Suspected early gastrointestinal neoplasia</li>
+            <li>Barrett's oesophagus with dysplasia or suspected neoplasia</li>
+            <li>Lesions requiring consideration of EMR or ESD</li>
+            <li>Pancreaticobiliary or upper GI indications for EUS</li>
+            <li>Obscure gastrointestinal bleeding or unexplained iron deficiency</li>
+            <li>Small bowel lesions requiring balloon-assisted enteroscopy</li>
+            <li>Complex cases where an advanced endoscopic opinion would be helpful</li>
+          </ul>
+
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:0882769888">(08) 8276 9888</a>
+          </p>
+
+          <p>
+            <strong>Fax:</strong> (08) 8276 5800
+          </p>
+
+          <div class="buttons" style="margin-top:22px;">
+            <a class="button" href="https://sagroup.net.au/specialists/dr-jonathon-schubert/" target="_blank" rel="noopener">
+              Referral &amp; Practice Information
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="margin-top:0;">Referrer resources</h3>
+          <div class="resource-list">
+            <a class="resource-link" href="#" target="_blank" rel="noopener">
+              Referral form <span>Download →</span>
+            </a>
+            <a class="resource-link" href="#" target="_blank" rel="noopener">
+              Direct-access procedure information <span>View →</span>
+            </a>
+            <a class="resource-link" href="#" target="_blank" rel="noopener">
+              Advanced endoscopy referral guide <span>View →</span>
+            </a>
+            <a class="resource-link" href="#" target="_blank" rel="noopener">
+              Practice locations &amp; contact details <span>View →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section id="locations" class="alt">
+    <div class="container">
+      <div class="eyebrow">Practice locations</div>
+      <h2>Consulting &amp; procedural locations</h2>
+      <p class="intro">
+        Consulting and procedural locations are selected according to the nature of the patient's care
+        and the requirements of the procedure.
+      </p>
+
+      <div class="locations-grid">
+        <div class="location-card">
+          <div class="location-type">Consulting</div>
+          <h3>Flinders Private Hospital</h3>
+          <p>Private specialist consultation and access to advanced endoscopic services in southern Adelaide.</p>
+        </div>
+
+        <div class="location-card">
+          <div class="location-type">Consulting &amp; Procedures</div>
+          <h3>Calvary Adelaide Hospital</h3>
+          <p>Central Adelaide specialist consulting and selected advanced endoscopic procedures.</p>
+        </div>
+
+        <div class="location-card">
+          <div class="location-type">Regional consulting</div>
+          <h3>Mortlock Clinic, Port Lincoln</h3>
+          <p>Specialist gastroenterology consulting for patients in regional South Australia.</p>
+        </div>
+
+        <div class="location-card">
+          <div class="location-type">Procedures</div>
+          <h3>Ashford Hospital</h3>
+          <p>Endoscopic procedures in an established private hospital environment.</p>
+        </div>
+
+        <div class="location-card">
+          <div class="location-type">Procedures</div>
+          <h3>Tennyson Centre Day Hospital</h3>
+          <p>Selected outpatient and day-hospital endoscopic procedures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="eyebrow">Patient information</div>
+      <h2>Frequently asked questions</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Do I need a referral?</summary>
+          <p>
+            A referral is generally required for specialist medical consultation and is useful in ensuring
+            that relevant clinical information and previous investigations are available before your appointment.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I be referred specifically for ESD or EMR?</summary>
+          <p>
+            Yes. Patients with large or complex gastrointestinal lesions can be referred for an advanced
+            endoscopic opinion. The most appropriate treatment is determined after review of the clinical
+            history, endoscopic appearance and pathology where available.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is an advanced procedure always better than surgery?</summary>
+          <p>
+            No. Advanced endoscopic treatment is appropriate only for selected patients and lesions.
+            Treatment recommendations take into account the depth and nature of a lesion, technical
+            considerations, cancer risk, patient preferences and the alternatives available.
+          </p>
+        </details>
+
+        <details>
+          <summary>What happens after an ESD or EMR?</summary>
+          <p>
+            Pathology is reviewed following resection and an appropriate surveillance or further-treatment
+            plan is developed. Results and recommendations are communicated to the patient and referring doctor.
+          </p>
+        </details>
+
+        <details>
+          <summary>Where are procedures performed?</summary>
+          <p>
+            Procedures are performed at selected accredited private hospital and day-hospital locations in
+            Adelaide. The appropriate location depends on the procedure and the patient's individual requirements.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="warm">
+    <div class="container contact-grid">
+      <div>
+        <div class="eyebrow">Appointments &amp; enquiries</div>
+        <h2>Arrange specialist care</h2>
+        <p class="lead">
+          If you are a patient, please contact the rooms regarding appointments, preparation and practical
+          questions. Referring doctors can use the referral information above.
+        </p>
+
+        <div class="buttons">
+          <a class="button" href="tel:0882769888">Call (08) 8276 9888</a>
+          <a class="button secondary" href="#referrals">Referral information</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-item">
+          <strong>Phone</strong>
+          <a href="tel:0882769888">(08) 8276 9888</a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Fax referrals</strong>
+          (08) 8276 5800
+        </div>
+
+        <div class="contact-item">
+          <strong>Practice</strong>
+          SA Group of Specialists
+        </div>
+
+        <div class="contact-item">
+          <strong>Locations</strong>
+          Adelaide &amp; Port Lincoln
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="closing">
+    <div class="container">
+      <div class="eyebrow" style="color:#a9c0c9;">Advanced endoscopy</div>
+      <h2>Specialist expertise. Thoughtful care.</h2>
+      <p>
+        Advanced endoscopy is about more than technical expertise. It is about selecting the right
+        treatment for the right patient, communicating clearly and providing careful follow-up.
+      </p>
+      <div class="buttons" style="justify-content:center;">
+        <a class="button" href="#referrals" style="background:white;color:var(--navy);border-color:white;">Refer a Patient</a>
+        <a class="button secondary" href="#patient-care">Patient-centred care</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p><strong>Dr Jonathon Schubert</strong></p>
+      <p>BSc, BEng(Hons I), MD(Dist), PhD, FRACP</p>
+      <p>Consultant Gastroenterologist &amp; Interventional Endoscopist | Adelaide &amp; Port Lincoln</p>
+    </div>
+
+    <div>
+      <p><strong>Patient &amp; Referrer Enquiries</strong></p>
+      <p><a href="tel:0882769888">(08) 8276 9888</a></p>
+      <p>Fax: (08) 8276 5800</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <p class="small-note">
+      The information on this website is general information only and does not replace medical advice.
+      Individual assessment is required to determine the most appropriate investigation or treatment.
+      Website content, procedure availability, locations and referral arrangements should be confirmed
+      with the practice.
+    </p>
+    <p style="margin-top:18px;">&copy; 2026 Dr Jonathon Schubert. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

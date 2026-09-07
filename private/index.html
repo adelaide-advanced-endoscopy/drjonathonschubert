@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Private Dashboard &amp; Journal</title>
+  
   <!-- Search engine exclusion -->
   <meta name="robots" content="noindex, nofollow">
+
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
     :root {
@@ -52,6 +55,23 @@
 
     h1 { margin: 0; font-size: 1.5rem; font-weight: 600; }
     .subtitle { color: #a9c0c9; font-size: 0.85rem; }
+
+    .logout-btn {
+      background: transparent;
+      border: 1px solid #a9c0c9;
+      color: white;
+      padding: 6px 14px;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .logout-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: white;
+    }
 
     .grid {
       display: grid;
@@ -191,6 +211,7 @@
       <h1>Personal Workspace</h1>
       <div class="subtitle">Private Dashboard &amp; Notes</div>
     </div>
+    <button class="logout-btn" onclick="netlifyIdentity.logout()">Log Out</button>
   </div>
 </header>
 
@@ -252,6 +273,13 @@
 </main>
 
 <script>
+  // Redirect on logout
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("logout", () => {
+      window.location.href = "/";
+    });
+  }
+
   // Simple Browser Storage Engine for Journal Entries
   const STORAGE_KEY = 'private_journal_entries';
 

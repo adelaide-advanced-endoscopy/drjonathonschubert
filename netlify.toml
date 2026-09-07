@@ -1,0 +1,5 @@
+Ini, TOML
+[[headers]]
+  for = "/private/*"
+  [headers.values]
+    Basic-Auth = "pokemon:pokemon"

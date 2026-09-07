@@ -1,11 +1,11 @@
 Ini, TOML
-# 1. Allow logged-in users with the 'admin' role to view /private/
+# Allow logged-in users with the 'admin' role to view /private/
 [[redirects]]
   from = "/private/*"
   status = 200
   conditions = {Role = ["admin"]}
 
-# 2. Kick everyone else attempting to access /private/ back to the public homepage
+# Redirect unauthenticated visitors back to homepage
 [[redirects]]
   from = "/private/*"
   to = "/"

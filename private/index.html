@@ -47,6 +47,21 @@
       filter: blur(0);
     }
 
+    /* Fallback Login Prompt Screen */
+    .auth-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .auth-fallback.hidden {
+      display: none;
+    }
+
     header {
       background: var(--navy);
       color: white;
@@ -218,6 +233,13 @@
 </head>
 <body>
 
+<!-- Unauthenticated Fallback Banner -->
+<div id="fallbackScreen" class="auth-fallback">
+  <h2>Protected Workspace</h2>
+  <p style="color: var(--muted); margin-bottom: 20px;">Please authenticate to access your private tools and journal.</p>
+  <button class="btn" onclick="window.netlifyIdentity && window.netlifyIdentity.open()">Log In / Authenticate</button>
+</div>
+
 <!-- Protected Wrapper -->
 <div id="protectedContent" class="auth-protected">
 
@@ -292,31 +314,52 @@
 
 <script>
   // Auth Gatekeeper Engine
-  document.addEventListener("DOMContentLoaded", () => {
+  function initAuthGatekeeper() {
     const content = document.getElementById("protectedContent");
+    const fallback = document.getElementById("fallbackScreen");
 
-    // Initialize Netlify Identity check
+    if (!window.netlifyIdentity) {
+      console.error("Netlify Identity script unavailable.");
+      return;
+    }
+
+    // Bind events
     window.netlifyIdentity.on("init", user => {
       if (user) {
         content.classList.add("authenticated");
+        fallback.classList.add("hidden");
       } else {
         content.classList.remove("authenticated");
-        window.netlifyIdentity.open();
+        fallback.classList.remove("hidden");
+        // Delay opening modal slightly to ensure DOM & widget mounting
+        setTimeout(() => {
+          window.netlifyIdentity.open();
+        }, 250);
       }
     });
 
-    // Handle Login event
     window.netlifyIdentity.on("login", user => {
       content.classList.add("authenticated");
+      fallback.classList.add("hidden");
       window.netlifyIdentity.close();
     });
 
-    // Handle Logout event
     window.netlifyIdentity.on("logout", () => {
       content.classList.remove("authenticated");
+      fallback.classList.remove("hidden");
       window.location.href = "/";
     });
-  });
+
+    // Explicitly initialize the widget
+    window.netlifyIdentity.init();
+  }
+
+  // Ensure DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAuthGatekeeper);
+  } else {
+    initAuthGatekeeper();
+  }
 
   // Browser Storage Engine for Journal Entries
   const STORAGE_KEY = 'private_journal_entries';

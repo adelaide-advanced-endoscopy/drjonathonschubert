@@ -1,13 +1,4 @@
-# Allow logged-in users with the 'admin' role to serve the private index file
 [[redirects]]
   from = "/private/*"
   to = "/private/index.html"
   status = 200
-  conditions = {Role = ["admin"]}
-
-# Redirect unauthenticated visitors back to the homepage
-[[redirects]]
-  from = "/private/*"
-  to = "/"
-  status = 302
-  force = true

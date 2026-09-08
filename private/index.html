@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Private Dashboard &amp; Journal</title>
@@ -33,6 +32,19 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+    }
+
+    /* Blur & hide page content before authentication */
+    .auth-protected {
+      display: none;
+      filter: blur(10px);
+      transition: filter 0.3s ease;
+    }
+
+    /* Revealed once logged in */
+    .auth-protected.authenticated {
+      display: block;
+      filter: blur(0);
     }
 
     header {
@@ -206,82 +218,107 @@
 </head>
 <body>
 
-<header>
-  <div class="container header-flex">
-    <div>
-      <h1>Personal Workspace</h1>
-      <div class="subtitle">Private Dashboard &amp; Notes</div>
+<!-- Protected Wrapper -->
+<div id="protectedContent" class="auth-protected">
+
+  <header>
+    <div class="container header-flex">
+      <div>
+        <h1>Personal Workspace</h1>
+        <div class="subtitle">Private Dashboard &amp; Notes</div>
+      </div>
+      <button class="logout-btn" onclick="window.netlifyIdentity.logout()">Log Out</button>
     </div>
-    <button class="logout-btn" onclick="netlifyIdentity.logout()">Log Out</button>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <div class="grid">
-    
-    <!-- LEFT COLUMN: Quick Links / Bookmarks -->
-    <aside>
-      <div class="section-title">Quick Links</div>
+  <main class="container">
+    <div class="grid">
+      
+      <!-- LEFT COLUMN: Quick Links / Bookmarks -->
+      <aside>
+        <div class="section-title">Quick Links</div>
 
-      <div class="link-group">
-        <h3>Clinical &amp; Hospital</h3>
-        <ul class="bookmark-list">
-          <li><a href="https://example.com" target="_blank">Clinical Portal</a></li>
-          <li><a href="https://example.com" target="_blank">Hospital Intranet</a></li>
-          <li><a href="https://example.com" target="_blank">Procedure Scheduling</a></li>
-        </ul>
-      </div>
-
-      <div class="link-group">
-        <h3>Reference &amp; Journals</h3>
-        <ul class="bookmark-list">
-          <li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed</a></li>
-          <li><a href="https://www.gesa.org.au/" target="_blank">GESA Guidelines</a></li>
-        </ul>
-      </div>
-
-      <div class="link-group">
-        <h3>Utilities</h3>
-        <ul class="bookmark-list">
-          <li><a href="https://drive.google.com" target="_blank">Google Drive</a></li>
-          <li><a href="https://mail.google.com" target="_blank">Email Console</a></li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- RIGHT COLUMN: Private Journal / Notes -->
-    <section>
-      <div class="section-title">Private Journal</div>
-
-      <!-- Entry Creator -->
-      <div class="card">
-        <form class="journal-form" id="journalForm">
-          <input type="text" id="titleInput" placeholder="Entry Title..." required>
-          <textarea id="bodyInput" placeholder="Write your thoughts, draft notes, or records here..." required></textarea>
-          <button type="submit" class="btn">Save Entry</button>
-        </form>
-      </div>
-
-      <!-- Journal Stream -->
-      <div class="card">
-        <div id="entriesContainer">
-          <!-- Saved entries render here -->
+        <div class="link-group">
+          <h3>Clinical &amp; Hospital</h3>
+          <ul class="bookmark-list">
+            <li><a href="https://example.com" target="_blank">Clinical Portal</a></li>
+            <li><a href="https://example.com" target="_blank">Hospital Intranet</a></li>
+            <li><a href="https://example.com" target="_blank">Procedure Scheduling</a></li>
+          </ul>
         </div>
-      </div>
-    </section>
 
-  </div>
-</main>
+        <div class="link-group">
+          <h3>Reference &amp; Journals</h3>
+          <ul class="bookmark-list">
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">PubMed</a></li>
+            <li><a href="https://www.gesa.org.au/" target="_blank">GESA Guidelines</a></li>
+          </ul>
+        </div>
+
+        <div class="link-group">
+          <h3>Utilities</h3>
+          <ul class="bookmark-list">
+            <li><a href="https://drive.google.com" target="_blank">Google Drive</a></li>
+            <li><a href="https://mail.google.com" target="_blank">Email Console</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- RIGHT COLUMN: Private Journal / Notes -->
+      <section>
+        <div class="section-title">Private Journal</div>
+
+        <!-- Entry Creator -->
+        <div class="card">
+          <form class="journal-form" id="journalForm">
+            <input type="text" id="titleInput" placeholder="Entry Title..." required>
+            <textarea id="bodyInput" placeholder="Write your thoughts, draft notes, or records here..." required></textarea>
+            <button type="submit" class="btn">Save Entry</button>
+          </form>
+        </div>
+
+        <!-- Journal Stream -->
+        <div class="card">
+          <div id="entriesContainer">
+            <!-- Saved entries render here -->
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</div>
 
 <script>
-  // Redirect on logout
-  if (window.netlifyIdentity) {
+  // Auth Gatekeeper Engine
+  document.addEventListener("DOMContentLoaded", () => {
+    const content = document.getElementById("protectedContent");
+
+    // Initialize Netlify Identity check
+    window.netlifyIdentity.on("init", user => {
+      if (user) {
+        content.classList.add("authenticated");
+      } else {
+        content.classList.remove("authenticated");
+        window.netlifyIdentity.open();
+      }
+    });
+
+    // Handle Login event
+    window.netlifyIdentity.on("login", user => {
+      content.classList.add("authenticated");
+      window.netlifyIdentity.close();
+    });
+
+    // Handle Logout event
     window.netlifyIdentity.on("logout", () => {
+      content.classList.remove("authenticated");
       window.location.href = "/";
     });
-  }
+  });
 
-  // Simple Browser Storage Engine for Journal Entries
+  // Browser Storage Engine for Journal Entries
   const STORAGE_KEY = 'private_journal_entries';
 
   function getEntries() {
@@ -339,30 +376,9 @@
     document.getElementById('bodyInput').value = '';
   });
 
-  // Initial render on load
+  // Initial journal render
   renderEntries();
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Wait for Netlify Identity to initialize
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        // If NOT logged in, auto-open the login prompt
-        window.netlifyIdentity.open();
-      }
-    });
 
-    // Once the user logs in, close the modal and refresh to display content
-    window.netlifyIdentity.on("login", () => {
-      window.netlifyIdentity.close();
-      window.location.reload();
-    });
-
-    // If logged out, prompt again
-    window.netlifyIdentity.on("logout", () => {
-      window.location.reload();
-    });
-  });
-</script>
 </body>
 </html>

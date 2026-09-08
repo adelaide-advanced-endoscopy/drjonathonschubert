@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Private Dashboard &amp; Journal</title>
@@ -341,6 +342,27 @@
   // Initial render on load
   renderEntries();
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Wait for Netlify Identity to initialize
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        // If NOT logged in, auto-open the login prompt
+        window.netlifyIdentity.open();
+      }
+    });
 
+    // Once the user logs in, close the modal and refresh to display content
+    window.netlifyIdentity.on("login", () => {
+      window.netlifyIdentity.close();
+      window.location.reload();
+    });
+
+    // If logged out, prompt again
+    window.netlifyIdentity.on("logout", () => {
+      window.location.reload();
+    });
+  });
+</script>
 </body>
 </html>
